@@ -1,0 +1,478 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Shrikhand&display=swap');
+
+body {
+    font-family: Roboto, sans-serif;
+    margin: 0;
+}
+
+.divLoader {
+    background-color: #fff;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    animation-name: hideLoader;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    opacity: 0; 
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    position: relative;
+    animation: rotate 1s linear infinite;
+    z-index: 1000;
+}
+
+.loader::before,
+.loader::after {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    inset: 0px;
+    border-radius: 50%;
+    border: 5px solid #FFF;
+    animation: prixClipFix 1s linear infinite;
+}
+
+.loader::after {
+    border-color: #e26fff;
+    animation: prixClipFix 2s linear infinite, rotate 0.4s linear infinite reverse;
+    inset: 6px;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg) }
+    100% { transform: rotate(360deg) }
+}
+
+@keyframes prixClipFix {
+    0% { clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0) }
+    25% { clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0) }
+    50% { clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%) }
+    75% { clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%) }
+    100% { clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0) }
+}
+
+@keyframes hideLoader {
+    0% {
+        opacity: 0.5;
+        display: flex; 
+    }
+    99% {
+        opacity: 0.5;
+        display: flex;
+    }
+    100% {
+        z-index: -100;
+        opacity: 0;
+        display: none; 
+    }
+}
+
+
+.divFondLogo {
+    background-color: white;
+    height: 63px;
+    box-shadow: #00000026 11px 16px 21px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    height: 30px;
+    width: 179px;
+}
+
+.localisation {
+    background-color: #e5e5e5;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.divGps {
+    display: flex;
+    flex-direction: row;
+}
+
+.iconGps {
+    font-size: 16px;
+    color: #2f2f2f;
+    margin-right: 15px;
+    margin-top: 16px;
+    height: fit-content;
+}
+
+.gps {
+    font-size: 16px;
+    width: fit-content;
+}
+
+.reservation {
+    background-color: #F7F7F7;
+    height: 287px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 48px;
+}
+
+.titre {
+    font-size: 24px;
+    color: #000;
+    text-align: center;
+    width: 70%;
+    font-weight: 700;
+}
+
+.decouv {
+    font-size: 18px;
+    font-weight: 300;
+    text-align: center;
+    color: #353535;
+    width: 86%;
+}
+
+
+.explo {
+    margin: 0 auto auto;
+    height: 50px;
+    width: 218px;
+    background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+    border-radius: 90px;
+    box-shadow: #b9b7b7 8px 10px 24px;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.explo:hover {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
+}
+
+.titlePart {
+    font-size: 24px;
+    font-weight: 700;
+    margin-left: 20px;
+    color: #000;
+}
+
+.ulBtn {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.bouton {
+    text-align: center;
+    height: 72px;
+    width: 322px;
+    background-color: #f8f8f8;
+    border-radius: 20px;
+    border: none;
+    box-shadow: #e3e3e3 11px 13px 33px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.bouton:hover {
+    background-color: #ebdffd;
+}
+
+.bouton:hover .icon {
+    color: #9356DC;
+}
+
+.spanCercle {
+    width: 24px;
+    height: 24px;
+    border-radius: 50px;
+    background: #9356DC;
+    margin-top: 24px;
+    margin-left: -12px;
+}
+
+.cercle {
+    color: white;
+    font-size: 14.182px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnChoix {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: 7%;
+}
+
+.choix {
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+    margin: -1% -1% -1% 4px;
+}
+
+.icon {
+    color: #7E7E7E;
+    margin-right: 15px;
+}
+
+.phone {
+    height: 20px;
+    width: 13px;
+}
+
+.list {
+    height: 15px;
+    width: 16px;
+}
+
+.shop {
+    height: 17px;
+    width: 18px;
+}
+
+.fondPlat {
+    background-color: #F7F7F7;
+    height: auto;
+}
+
+.plat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 25px;
+}
+
+.listResto {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+.menu {
+    margin: 0 0 22px;
+    background-color: white;
+    border-radius: 15px;
+    height: 251px;
+    width: 338px;
+    box-shadow: #0000001a 11px 16px 33px;
+    cursor: pointer;
+    text-decoration: none;
+    position: relative;
+}
+
+.divEtiquette {
+    background-color: #99E2D0;
+    position: absolute;
+    z-index: 0;
+    border-radius: 2px;
+    height: 29px;
+    width: 78.824px;
+    display: flex;
+    right: 12px;
+    top: 12px;
+}
+
+.etiquette {
+    color: #008766;
+    font-size: 14px;
+    margin: auto;
+    font-weight: 500;
+}
+
+.imgPlat {
+    display: inline-block;
+    width: 100%;
+    height: 175px;
+    margin: 0 0 3%;
+    border-radius: 15px 15px 0 0;
+    object-fit: cover;
+}
+
+.divOnglet {
+    display: flex;
+    flex-direction: row;
+    margin-left: 4%;
+    justify-content: space-between;
+}
+
+.divTexte {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.titrePlat {
+    z-index: 1;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 auto 5px 0;
+    text-decoration: none;
+    color: #000;
+}
+
+.sous-titrePlat {
+    z-index: 1;
+    font-size: 17px;
+    font-weight: 300;
+    color: #000;
+    margin: 0 auto 0 0;
+}
+
+.divHeart {
+    display: inline-block;
+    margin-top: 2%;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+.heart {
+    color: #2f2f2f;
+    position: absolute;
+    right: 31px;
+}
+
+.heartAnim {
+    background: transparent;
+    color: transparent;
+    position: absolute;
+    right: 31px;
+}
+
+.heartAnim:hover {
+    background: linear-gradient(#9356DC, #FF79DA);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.footer {
+    background-color: #353535;
+}
+
+.divFooter {
+    display: flex;
+    flex-direction: column;
+    margin-left: 8%;
+}
+
+.footerlogo {
+    display: block;
+    height: auto;
+    width: 100px;
+    filter: invert(1);
+    margin-top: 7%;
+    margin-bottom: 3%;
+}
+
+.objet {
+    padding: 0;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+.titreFooter {
+    display: flex;
+    flex-direction: row;
+}
+
+.texte {
+    font-size: 16px;
+    margin: -3px 0 10px;
+    font-weight: 500;
+    gap: 3px;
+}
+
+.spe {
+    font-weight: 400;
+}
+
+.couvert {
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.hand {
+    font-size: 12px;
+    margin-right: 10px;
+}
+
+@media screen and (min-width: 1440px) {
+    
+    .navFonc {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .ulBtn {
+        margin-bottom: 50px;
+        flex-direction: row;
+    }
+
+    .titlePart {
+        margin-left: 11.8%;
+    }
+
+    .bouton {
+        margin-right: 36px;
+    }
+
+    .listResto {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .menu {
+        width: 490px;
+        margin-right: 100px;
+        margin-bottom: 50px;
+    }
+
+    .divFooter {
+        flex-direction: row-reverse;
+    }
+
+    .objet {
+        height: fit-content;
+        flex-direction: row;
+    }
+
+    .texte {
+        height: fit-content;
+    }
+
+}
