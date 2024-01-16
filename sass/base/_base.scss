@@ -1,0 +1,19 @@
+html {
+    overflow-x: hidden;
+
+    body {
+        font-family: Roboto, sans-serif;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    
+        @media screen and (min-width:1440px) {
+            
+        }
+    }
+}
+
+
+
+
+

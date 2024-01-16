@@ -1,0 +1,199 @@
+.header {
+
+    &__loading {
+        background-color: #fff;
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+        animation-name: hideLoader;
+        animation-duration: 3s;
+        animation-fill-mode: forwards;
+        opacity: 0; 
+        overflow-x: hidden;
+        overflow-y: hidden;
+
+        &__loader {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            position: relative;
+            animation: rotate 1s linear infinite;
+            z-index: 1000;
+        }
+
+        &__loader::before,
+        &__loader::after {
+            content: "";
+            box-sizing: border-box;
+            position: absolute;
+            inset: 0px;
+            border-radius: 50%;
+            border: 5px solid #FFF;
+            animation: prixClipFix 1s linear infinite;
+        }
+        
+        &__loader::after {
+            border-color: #e26fff;
+            animation: prixClipFix 2s linear infinite, rotate 0.4s linear infinite reverse;
+            inset: 6px;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg) }
+            100% { transform: rotate(360deg) }
+        }
+        
+        @keyframes prixClipFix {
+            0% { clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0) }
+            25% { clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0) }
+            50% { clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%) }
+            75% { clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%) }
+            100% { clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0) }
+        }
+        
+        @keyframes hideLoader {
+            0% {
+                opacity: 0.5;
+                display: flex; 
+            }
+            99% {
+                opacity: 0.5;
+                display: flex;
+            }
+            100% {
+                z-index: -100;
+                opacity: 0;
+                display: none; 
+            }
+        }
+
+    }
+    
+    &__logo {
+        background-color: white;
+        height: 63px;
+        box-shadow: #00000026 11px 16px 21px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &__img {
+            height: 30px;
+            width: 179px;
+        }
+    }
+
+    &__localisation {
+        background-color: #e5e5e5;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+
+        &__gps {
+            display: flex;
+            flex-direction: row;
+
+            &__icon {
+                font-size: 16px;
+                color: #2f2f2f;
+                margin-right: 15px;
+                margin-top: 16px;
+                height: fit-content;
+            }
+
+            &__text {
+                font-size: 16px;
+                width: fit-content;
+            }
+        } 
+    }
+
+    &__introduction {
+        background-color: #F7F7F7;
+        height: 287px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 48px;
+
+        @media screen and (min-width: 1440px) {
+
+            height: 239px;
+
+        }
+
+        &__title {
+            font-size: 24px;
+            color: #000;
+            text-align: center;
+            width: 70%;
+            font-weight: 700;
+            margin-top: 39px;
+            margin-bottom: 0;
+        }
+        
+        &__texte {
+            font-size: 18px;
+            font-weight: 300;
+            text-align: center;
+            color: #353535;
+            width: 86%;
+        }
+        
+        &__button {
+            margin: 10px auto auto;
+            height: 50px;
+            width: 218px;
+            background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+            border-radius: 90px;
+            box-shadow: #b9b7b7 8px 10px 24px;
+            font-size: 16px;
+            color: #fff;
+            border: none;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        &__button:hover {
+            background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
+        }
+    }
+}
+
+.heading {
+    
+    &__nav {
+        background-color: white;
+        height: 63px;
+        width: 100%;
+        display: flex;
+        flex-direction: row-reverse;
+
+        &__logo {
+            height: auto;
+            width: 179px;
+            margin: auto;
+        }
+    
+        &__arrow {
+            color: #353535;
+            font-size: 21px;
+            margin: auto 0 auto 15px;
+            margin-top: 20px;
+        }
+    }
+
+    &__img {
+        display: block;
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        position: relative;
+        z-index: -1;
+    }
+}
